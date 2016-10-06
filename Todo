@@ -1,0 +1,38 @@
+##ToDO##############################
+STACK
+Backend Programmng lanuage => Java Spark
+Json
+Database => Mysql
+Webserver => Jetty
+Hosting Provider => YellowCircle[Potential] - Linux Flavour
+
+#################SCOPE#########################
+TBD
+
+######TODO###########################
+CREATE STACK on Yellocircle - Hardeep
+Need to create README file - Mary
+Define Database layout - Greg
+Presentation - Tim
+Demo
+SPARK --- Marceu
+  Authentication
+  Data persistenceny 
+  Get --- All the available TOdos with ID
+  Post - Update Todo by ID
+  Put -- Create new Todo
+  Delete - Delete Todo based on the passed in ID
+ 
+################Week 2 Deliverables - 10/09/2016#################
+  Investigate and report back Yellowcircle - Hardeep
+  Hardeep will provide mysql data information to Gregg
+  Hardeep need to provide account iformation to team
+  Fill team information, project scope, language in the README file
+  Create DB and table - Gregg
+Week 3 Deliverables
+  Code Restful API - Marceu
+  Test application - Team
+Week 4 Deliverabls
+  Create Presentation
+  
+   
