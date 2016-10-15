@@ -7,7 +7,7 @@
 5. Mary Abigail Coronado - maryabbycoronado@live.com
 
 ##Project Scope
-The scope of this project is to create RESTFUL API for TODO list or task lists application using back end programming platform (Java using Sparks), database (MySQL), web server (Jetty) and host provider (Digital Ocean). The code will be compiled into a jar or war file and will be available in Github. The endpoint would be http://localhost:4567/todos.
+The scope of this project is to create RESTFUL API for TODO list or task lists application using back end programming platform (Java using Sparks), database (MySQL), web server (Jetty) and host provider (Digital Ocean). The code will be compiled into a jar or war file then deploy the compiled code in Github. The endpoint would be http://localhost:4567/todos.
 
 Fantastic Five will create the following requests 
 
