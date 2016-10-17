@@ -11,7 +11,9 @@ public interface DAO {
 
 	public List<Todo> getAllTodos();
 	
+	public Todo getTodo(String id);
+	
 	public boolean updateTodo(Todo todo, String id);
 	
-	public boolean deleteTodo(Todo todo, String id);
+	public boolean deleteTodo(String id);
 }

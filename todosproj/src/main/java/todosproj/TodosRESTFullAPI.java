@@ -16,7 +16,7 @@ public class TodosRESTFullAPI {
 	private final static Controller controller = new Controller(dao);
 	
 	public static void main(String[] args) {
-		
+		port (80);
 		BasicConfigurator.configure();
 		
 		before("/todos", (request, response) -> {
@@ -53,18 +53,26 @@ public class TodosRESTFullAPI {
 		get("/todos", (request, response) -> {
             return controller.getAllTodos();
         });
+		
+		get("/hello", (request, response) -> {
+            return "Hello World";
+        });
+		
+		get("/todos/:id", (req, res) -> {
+            return controller.getTodo(req.params(":id"));
+        });
 
 		post("/todos", (req, res) -> { 
 			return controller.addTodo(req.body()); 
 		} );
 
         
-        put("/todos/update/:id", (req, res) -> {
+        put("/todos/:id", (req, res) -> {
             return controller.updateTodo(req.body(), req.params(":id"));
         });
 		
-        delete("/todos/delete/:id", (req, res) -> {
-            return controller.deleteTodo(req.body(), req.params(":id"));
+        delete("/todos/:id", (req, res) -> {
+            return controller.deleteTodo(req.params(":id"));
         });
 		/*
         options("/todos", (request, response) -> {

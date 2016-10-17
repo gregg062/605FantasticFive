@@ -93,6 +93,26 @@ public class JdbcDAO implements DAO{
 		}
 	}
 	
+	@Override
+	public Todo getTodo(String id) {
+		QueryRunner run = new QueryRunner( dataSource );
+
+		try	{
+
+			ResultSetHandler<List<Todo>> h = new BeanListHandler<Todo>(Todo.class);
+
+			List<Todo> todos = run.query("SELECT * FROM todos WHERE id = " +id, h);
+			Todo todo = todos.get(0);
+			return todo;
+
+		} catch(SQLException sqle) {
+
+		    throw new RuntimeException("Problem updating", sqle);
+
+		}
+	}
+	
+	@Override
 	public boolean updateTodo(Todo todo, String id) {
 
     	QueryRunner run = new QueryRunner( dataSource );
@@ -111,7 +131,8 @@ public class JdbcDAO implements DAO{
 
     }
 	
-	public boolean deleteTodo(Todo todo, String id) {
+	@Override
+	public boolean deleteTodo(String id) {
 
     	QueryRunner run = new QueryRunner( dataSource );
 
@@ -128,4 +149,5 @@ public class JdbcDAO implements DAO{
 		return true;    	
 
     }
+
 }

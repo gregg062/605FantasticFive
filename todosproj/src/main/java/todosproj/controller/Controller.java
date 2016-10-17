@@ -24,14 +24,18 @@ public class Controller {
 		Todo todo = mapper.fromJson(json, Todo.class);		
 
 		if (dao.addTodo(todo)){
-			return "{\"message\":\"Added a person!\"}"; 
+			return "{\"message\":\"Added a Todo!\"}"; 
 		} else {
-			return "{\"message\":\"Failed to add a person\"}";
+			return "{\"message\":\"Failed to add a Todo\"}";
 		}
 	}
 	
 	public String getAllTodos(){
 		return mapper.toJson(dao.getAllTodos());
+	}
+	
+	public String getTodo(String id) {
+		return mapper.toJson(dao.getTodo(id));	
 	}
 	
 	public String updateTodo(String json, String id){
@@ -44,10 +48,9 @@ public class Controller {
 		}
 	}
 	
-	public String deleteTodo(String json, String id) {
-		Todo todo = mapper.fromJson(json, Todo.class);
-		
-		if (dao.deleteTodo(todo, id)) {
+	public String deleteTodo(String id) {
+				
+		if (dao.deleteTodo(id)) {
 			return "{\"message\":\"Deleted todo!\"}"; 
 		}else {
 			return "{\"message\":\"Failed to delete todo\"}";
