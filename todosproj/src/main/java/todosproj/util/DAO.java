@@ -10,4 +10,8 @@ public interface DAO {
 	public boolean addTodo(Todo todo);
 
 	public List<Todo> getAllTodos();
+	
+	public boolean updateTodo(Todo todo, String id);
+	
+	public boolean deleteTodo(Todo todo, String id);
 }

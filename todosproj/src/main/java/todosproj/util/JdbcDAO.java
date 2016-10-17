@@ -21,7 +21,7 @@ public class JdbcDAO implements DAO{
         try {
 
         	dataSource = new MysqlDataSource();
-        	dataSource.setUser("gregg");
+        	dataSource.setUser("dbroot");
         	dataSource.setPassword("fantastic5");
         	dataSource.setServerName("localhost");
         	dataSource.setDatabaseName("todo");
@@ -92,4 +92,40 @@ public class JdbcDAO implements DAO{
 
 		}
 	}
+	
+	public boolean updateTodo(Todo todo, String id) {
+
+    	QueryRunner run = new QueryRunner( dataSource );
+
+		try	{
+
+		    run.update( "UPDATE todos SET name = ?, status = ? WHERE id = ? ", todo.getName(), todo.getStatus(), id);
+
+		} catch(SQLException sqle) {
+
+		    throw new RuntimeException("Problem updating", sqle);
+
+		}
+
+		return true;    	
+
+    }
+	
+	public boolean deleteTodo(Todo todo, String id) {
+
+    	QueryRunner run = new QueryRunner( dataSource );
+
+		try	{
+
+		    run.update( "DELETE FROM todos WHERE id = ?" , id);
+
+		} catch(SQLException sqle) {
+
+		    throw new RuntimeException("Problem updating", sqle);
+
+		}
+
+		return true;    	
+
+    }
 }

@@ -33,4 +33,25 @@ public class Controller {
 	public String getAllTodos(){
 		return mapper.toJson(dao.getAllTodos());
 	}
+	
+	public String updateTodo(String json, String id){
+		Todo todo = mapper.fromJson(json, Todo.class);
+		
+		if(dao.updateTodo(todo, id)) {
+			return "{\"message\":\"Updated todo!\"}";
+		} else {
+			return "{\"message\":\"Failed to Update todo\"}";
+		}
+	}
+	
+	public String deleteTodo(String json, String id) {
+		Todo todo = mapper.fromJson(json, Todo.class);
+		
+		if (dao.deleteTodo(todo, id)) {
+			return "{\"message\":\"Deleted todo!\"}"; 
+		}else {
+			return "{\"message\":\"Failed to delete todo\"}";
+		}		
+		
+	}
 }

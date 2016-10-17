@@ -58,15 +58,15 @@ public class TodosRESTFullAPI {
 			return controller.addTodo(req.body()); 
 		} );
 
-        /*
-        put("/todos", (request, response) -> {
-            // Update something
+        
+        put("/todos/update/:id", (req, res) -> {
+            return controller.updateTodo(req.body(), req.params("id"));
         });
-
-        delete("/todos", (request, response) -> {
-            // Annihilate something
+		
+        delete("/todos/delete/:id", (req, res) -> {
+            return controller.deleteTodo(req.body(), req.params("id"));
         });
-
+		/*
         options("/todos", (request, response) -> {
             // Appease something
         });*/
