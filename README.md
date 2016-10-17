@@ -13,10 +13,12 @@ Fantastic Five will create the following requests
 
 *	GET  - the request will get  the todo items
 *	CREATE – the request will create new todo items
-* UPDATE – the request will update a todo item based on the ID.
+* PUT(UPDATE) – the request will Update existing Todo by passing in the Todo ID
 *	DELETE – the request will delete a todo item based on the ID.
+* Post - Post new Todo by passing in Todo name and Todo status
 
 Fantastic Five will establish authentication checks for the todo methods. 
+Authentication - Authenticate user with each new session.
 
 *	http://localhost:4567/todos (get and post - show all and create)
 * http://localhost:4567/login/admin/fantastic  (this url authenticates the user and release the todos methods above)
