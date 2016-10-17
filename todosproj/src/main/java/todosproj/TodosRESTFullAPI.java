@@ -60,11 +60,11 @@ public class TodosRESTFullAPI {
 
         
         put("/todos/update/:id", (req, res) -> {
-            return controller.updateTodo(req.body(), req.params("id"));
+            return controller.updateTodo(req.body(), req.params(":id"));
         });
 		
         delete("/todos/delete/:id", (req, res) -> {
-            return controller.deleteTodo(req.body(), req.params("id"));
+            return controller.deleteTodo(req.body(), req.params(":id"));
         });
 		/*
         options("/todos", (request, response) -> {
