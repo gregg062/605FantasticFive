@@ -46,8 +46,8 @@ Approach
 
 
 FINAL PRESENTATION ROLES
-Tim - Team Introduction
-Hardeep - Stack Architecture
-Gregg - Demo
-Marceu - Code review
-Mary - Issues
+* Tim - Team Introduction
+* Hardeep - Stack Architecture
+* Gregg - Demo
+* Marceu - Code review
+* Mary - Issues
