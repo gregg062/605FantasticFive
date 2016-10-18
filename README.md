@@ -43,3 +43,11 @@ Approach
 *	Code Restful todo states in Java (GET, CREATE,UPDATE and DELETE)
 *	Compile code in a jar or war file 
 * Deploy compiled code in Github.com
+
+
+FINAL PRESENTATION ROLES
+Tim - Team Introduction
+Hardeep - Stack Architecture
+Gregg - Demo
+Marceu - Code review
+Mary - Issues
