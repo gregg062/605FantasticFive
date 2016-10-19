@@ -2,6 +2,9 @@ package todosproj.util;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -21,7 +24,7 @@ public class JdbcDAO implements DAO{
         try {
 
         	dataSource = new MysqlDataSource();
-        	dataSource.setUser("dbroot");
+        	dataSource.setUser("gregg");
         	dataSource.setPassword("fantastic5");
         	dataSource.setServerName("localhost");
         	dataSource.setDatabaseName("todo");
@@ -41,8 +44,8 @@ public class JdbcDAO implements DAO{
 			boolean result = false;
 
 			ResultSetHandler<List<User>> h = new BeanListHandler<User>(User.class);
-
-			List<User> qryuser = run.query("SELECT * FROM user where username='"+user+"' and password='"+pass+"'", h);
+			
+			List<User> qryuser = run.query("SELECT * FROM user where username='"+user+"' and password=password('"+pass+"')", h);
 
 			if(!qryuser.isEmpty()) result = true;
 			
@@ -149,5 +152,29 @@ public class JdbcDAO implements DAO{
 		return true;    	
 
     }
+	
+	public static String md5(String input) {
+		
+		String md5 = null;
+		
+		if(null == input) return null;
+		
+		try {
+			
+		//Create MessageDigest object for MD5
+		MessageDigest digest = MessageDigest.getInstance("MD5");
+		
+		//Update input string in message digest
+		digest.update(input.getBytes(), 0, input.length());
+
+		//Converts message digest value in base 16 (hex) 
+		md5 = new BigInteger(1, digest.digest()).toString(32);
+
+		} catch (NoSuchAlgorithmException e) {
+
+			e.printStackTrace();
+		}
+		return md5;
+	}
 
 }
