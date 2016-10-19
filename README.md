@@ -20,9 +20,11 @@ Fantastic Five will create the following requests
 Fantastic Five will establish authentication checks for the todo methods. 
 Authentication - Authenticate user with each new session.
 
-*	http://localhost:4567/todos (get and post - show all and create)
-* http://localhost:4567/login/admin/fantastic  (this url authenticates the user and release the todos methods above)
-*	http://localhost:4567/logout (log the user out and kills the session - todos methods will be halted)
+*	Use GET method --> http://104.131.153.97/todos --> You will be required to authenticate yourself,
+*	Use GET  method to list all the Todos --> http://104.131.153.97/todos
+*	User Post method to create new Todo by providing name and status in Jason format -- http://104.131.153.97/todos
+*	Use Put method to update the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
+*	Use Delete method to delete the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
 
 ##Technology stack 
 
