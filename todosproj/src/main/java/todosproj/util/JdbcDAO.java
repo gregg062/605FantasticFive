@@ -24,7 +24,7 @@ public class JdbcDAO implements DAO{
         try {
 
         	dataSource = new MysqlDataSource();
-        	dataSource.setUser("gregg");
+        	dataSource.setUser("dbroot");
         	dataSource.setPassword("fantastic5");
         	dataSource.setServerName("localhost");
         	dataSource.setDatabaseName("todo");
