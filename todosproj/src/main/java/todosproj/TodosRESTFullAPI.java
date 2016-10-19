@@ -16,7 +16,7 @@ public class TodosRESTFullAPI {
 	private final static Controller controller = new Controller(dao);
 	
 	public static void main(String[] args) {
-		port (80);
+		//port (80);
 		BasicConfigurator.configure();
 		
 		before("/todos", (request, response) -> {
@@ -46,6 +46,7 @@ public class TodosRESTFullAPI {
         });
 		
 		get("/logout", (request, response) -> {
+			request.session().attribute("authenticated", false);
 			request.session(false);
             return "User logged out.";
         });
