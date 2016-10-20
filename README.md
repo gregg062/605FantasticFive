@@ -7,7 +7,7 @@
 5. Mary Abigail Coronado 
 
 ##Project Scope
-The scope of this project is to create RESTFUL API for TODO list or task lists application using back end programming platform (Java using Sparks), database (MySQL), web server (Jetty) and host provider (Digital Ocean). The code will be compiled into a jar or war file then deploy the compiled code in Github. The endpoint would be http://localhost:4567/todos.
+The scope of this project is to create RESTFUL API for TODO list or task lists application using back end programming platform (Java using Sparks), database (MySQL), web server (Jetty) and host provider (Digital Ocean). The code will be compiled into a jar or war file then deploy the compiled code in Github. 
 
 Fantastic Five will create the following requests 
 
@@ -15,16 +15,16 @@ Fantastic Five will create the following requests
 *	CREATE – the request will create new todo items
 * PUT(UPDATE) – the request will Update existing Todo by passing in the Todo ID
 *	DELETE – the request will delete a todo item based on the ID.
-* Post - Post new Todo by passing in Todo name and Todo status
+* POST - Post new Todo by passing in Todo name and Todo status
 
 Fantastic Five will establish authentication checks for the todo methods. 
 Authentication - Authenticate user with each new session.
 
-*	Use GET method --> http://104.131.153.97/todos --> You will be required to authenticate yourself,
-*	Use GET  method to list all the Todos --> http://104.131.153.97/todos
-*	User Post method to create new Todo by providing name and status in Jason format -- http://104.131.153.97/todos
-*	Use Put method to update the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
-*	Use Delete method to delete the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
+* GET method --> http://104.131.153.97/todos --> You will be required to authenticate user.
+* GET method - list all the Todos --> http://104.131.153.97/todos
+* POST method - create new Todo by providing name and status in Json format -- http://104.131.153.97/todos
+* PUT method - update the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
+* DELETE method - delete the existing Todo by passing in the ID -- http://104.131.153.97/todos/id
 
 ##Technology stack 
 
